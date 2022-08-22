@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('settlements', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('municipality_id')->constrained();
-            $table->foreignId('type_id')->references('id')->on('settlement_types');
+            $table->foreignId('state_id')->constrained();
             $table->smallInteger('key');
             $table->string('name', 100);
-            $table->enum('zone_type', ['URBANO', 'RURAL', 'SEMIURBANO']);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settlements');
+        Schema::dropIfExists('cities');
     }
 };

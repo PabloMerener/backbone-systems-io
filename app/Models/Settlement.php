@@ -13,4 +13,9 @@ class Settlement extends Model
     {
         return $this->belongsTo(SettlementType::class, 'type_id');
     }
+
+    public function municipality()
+    {
+        return $this->belongsTo(Municipality::class);
+    }
 }
