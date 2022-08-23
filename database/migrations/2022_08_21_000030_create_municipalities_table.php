@@ -15,12 +15,8 @@ return new class extends Migration
     {
         Schema::create('municipalities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('state_id')->constrained();
-            $table->foreignId('city_id')->nullable()->constrained();
             $table->string('zip_code', 10)->unique();
-            $table->smallInteger('key');
-            $table->string('name', 100);
-            $table->json('detail')->nullable();
+            $table->json('detail');
             $table->timestamps();
         });
     }

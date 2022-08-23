@@ -18,6 +18,8 @@ class MunicipalityController extends Controller
     {
         $detail = (object) Municipality::whereZipCode($zipCode)->firstOrFail()->detail;
 
+        // return $detail;
+
         return [
             'zip_code' => $detail->zip_code,
             'locality' => $detail->locality,
