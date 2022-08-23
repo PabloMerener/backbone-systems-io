@@ -18,19 +18,4 @@ class Municipality extends Model
     protected $casts = [
         'detail' => 'array',
     ];
-
-    public function state()
-    {
-        return $this->belongsTo(State::class);
-    }
-
-    public function city()
-    {
-        return $this->belongsTo(City::class);
-    }
-
-    public function settlements()
-    {
-        return $this->hasMany(Settlement::class);
-    }
 }
