@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('municipalities', function (Blueprint $table) {
+        Schema::create('zip_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('zip_code', 10)->unique();
+            $table->string('code', 5)->unique();
             $table->json('detail');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipalities');
+        Schema::dropIfExists('zip_codes');
     }
 };

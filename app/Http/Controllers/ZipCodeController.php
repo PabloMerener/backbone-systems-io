@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ZipCode;
 use Illuminate\Http\Request;
-use App\Models\Municipality;
 
-class MunicipalityController extends Controller
+class ZipCodeController extends Controller
 {
     /**
      * Display the specified resource.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  string $zipCode
+     * @param  string $zip_code
      * @return \Illuminate\Http\Response
      */
-    public function zipCode(Request $request, $zipCode)
+    public function zip_code(Request $request, $zip_code)
     {
-        $detail = (object) Municipality::whereZipCode($zipCode)->firstOrFail()->detail;
-
-        // return $detail;
+        $detail = (object) ZipCode::whereCode($zip_code)->firstOrFail()->detail;
 
         return [
             'zip_code' => $detail->zip_code,
