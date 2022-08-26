@@ -10,3 +10,7 @@ Para pasar la información desde el archivo CPdescarga.xls a la base de datos, u
 
 SERVICE: heroku-postgresql
 PLAN: hobby-basic
+
+## Consulta
+
+¿Era válido crear 100 tablas del tipo zip_codes_*? Es decir tablas con el sufijo de los primeros dos caracteres del código postal con el fin de crear tablas de un máximo de 100 registros para hacer las búsquedas super rápidas.
